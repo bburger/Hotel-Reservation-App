@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Featured Hotels</h1>
+
+<div class="row">
+    <% @hotels.each do |hotel| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="<%= hotel.image %>">
+        <div class="caption">
+          <h3><%= hotel.name %></h3>
+          <h5>Cost: $<%= hotel.cost %></h5>
+          <h5><%= hotel.address %>, <%= hotel.city %></h5>
+          <center><%= link_to "More Info", hotel, class: "btn btn-default" %><center>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+<br>
+
+<%= link_to 'New Hotel', new_hotel_path %>
